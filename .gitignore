@@ -1,13 +1,15 @@
-# Files and folders to keep out of version control
 
-.env
+# Files and folders to keep out of version control
 *.key
 *.pem
-secrets/
-
-__pycache__/
 *.pyc
-.ipynb_checkpoints/
-
 .DS_Store
+.env
+.env.*
+.ipynb_checkpoints/
+.venv/
 Thumbs.db
+__pycache__/
+dist/*.tmp
+node_modules/
+secrets/
