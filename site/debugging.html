@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Debugging Help — Free AI Coding with Local Models</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a href="#content" class="skip-link">Skip to content</a>
+
+<div class="site">
+<header>
+  <div class="container">
+    <a href="index.html" class="site-title">Asdale Dynamics, LLC</a>
+    <p class="tagline">Free AI coding with local models — no account, no API key, private by default</p>
+    <nav>
+      <a href="index.html">Manual</a>
+      <a href="ollama-setup.html">Ollama setup</a>
+      <a href="code-prompts.html">Code prompts</a>
+      <a href="debugging.html" aria-current="page">Debugging help</a>
+      <a href="privacy.html">Privacy-safe habits</a>
+      <a href="cheat-sheet.html">Cheat sheet (printable)</a>
+    </nav>
+  </div>
+</header>
+
+<main id="content">
+<h1>Debugging Help</h1>
+<p>Use your local AI model to get unstuck when code breaks. Never paste
+passwords, API keys, or real customer data into any prompt.</p>
+
+<h2>The debugging loop</h2>
+<ol>
+  <li>Read the error message</li>
+  <li>Paste the error and your code into Ollama</li>
+  <li>Try the suggested fix</li>
+  <li>Run the code again</li>
+  <li>Repeat if needed</li>
+</ol>
+
+<h2>Debugging prompt template</h2>
+<pre><code>This code is supposed to &lt;WHAT IT SHOULD DO&gt;, but instead it
+&lt;WHAT IT ACTUALLY DOES&gt;.
+
+Error message:
+
+&lt;PASTE THE COMPLETE ERROR MESSAGE&gt;
+
+Code:
+
+&lt;PASTE YOUR CODE&gt;
+
+Suggest a fix and explain what went wrong in simple terms.</code></pre>
+
+<h2>Worked example</h2>
+<p>File <code>calc.py</code>:</p>
+<pre><code class="language-python">def total(prices):
+    return sum(prices)
+
+print(total(["10", "20", "30"]))</code></pre>
+<p>Error:</p>
+<pre><code>TypeError: unsupported operand type(s) for +: 'int' and 'str'</code></pre>
+<p>Prompt to Ollama:</p>
+<pre><code>This code is supposed to add up a list of prices, but it crashes with
+TypeError: unsupported operand type(s) for +: 'int' and 'str'.
+
+Error message:
+
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+Code:
+
+def total(prices):
+    return sum(prices)
+
+print(total(["10", "20", "30"]))
+
+Suggest a fix and explain what went wrong in simple terms.</code></pre>
+<p>Ollama will likely suggest converting the strings to numbers:</p>
+<pre><code class="language-python">def total(prices):
+    return sum(float(p) for p in prices)
+
+print(total(["10", "20", "30"]))</code></pre>
+<p>Copy the fix, save the file, and run it again:</p>
+<pre><code class="language-bash">python calc.py</code></pre>
+
+<div class="callout">
+<h3>If the fix does not work</h3>
+<p>Paste the new error and your updated code back into Ollama:</p>
+<pre><code>I tried your fix and now I get this error:
+
+&lt;PASTE NEW ERROR MESSAGE&gt;
+
+Here is my updated code:
+
+&lt;PASTE UPDATED CODE&gt;
+
+What should I change next?</code></pre>
+</div>
+
+<h2>Safety rules for debugging</h2>
+<table>
+  <thead>
+    <tr><th>Do</th><th>Do not</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Use fake names, numbers, and addresses</td><td>Paste real API keys (&ldquo;sk-&hellip;&rdquo;, &ldquo;ghp_&hellip;&rdquo;)</td></tr>
+    <tr><td>Paste error messages</td><td>Paste real customer or patient data</td></tr>
+    <tr><td>Read code before you run it</td><td>Run AI-suggested code without checking it</td></tr>
+    <tr><td>Remove secrets before sharing code</td><td>Commit real secrets to GitHub</td></tr>
+  </tbody>
+</table>
+
+<h2>Common beginner errors</h2>
+<table>
+  <thead>
+    <tr><th>Error</th><th>What it usually means</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>NameError: name &lsquo;x&rsquo; is not defined</code></td><td>You used a variable before creating it</td></tr>
+    <tr><td><code>TypeError</code></td><td>You tried to use a value in the wrong way (e.g. adding text to a number)</td></tr>
+    <tr><td><code>SyntaxError</code></td><td>Typo, missing colon, or mismatched parenthesis</td></tr>
+    <tr><td><code>FileNotFoundError</code></td><td>The file path is wrong or the file is missing</td></tr>
+  </tbody>
+</table>
+
+<p class="no-print"><a href="index.html">&larr; Back to manual</a> |
+Source: <a href="../docs/debugging.md">docs/debugging.md</a></p>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Asdale Dynamics, LLC. MIT License.</p>
+    <p>Educational guide only — not medical, legal, or security advice.</p>
+  </div>
+</footer>
+</div>
+</body>
+</html>

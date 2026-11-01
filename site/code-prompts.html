@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Code Prompts — Free AI Coding with Local Models</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a href="#content" class="skip-link">Skip to content</a>
+
+<div class="site">
+<header>
+  <div class="container">
+    <a href="index.html" class="site-title">Asdale Dynamics, LLC</a>
+    <p class="tagline">Free AI coding with local models — no account, no API key, private by default</p>
+    <nav>
+      <a href="index.html">Manual</a>
+      <a href="ollama-setup.html">Ollama setup</a>
+      <a href="code-prompts.html" aria-current="page">Code prompts</a>
+      <a href="debugging.html">Debugging help</a>
+      <a href="privacy.html">Privacy-safe habits</a>
+      <a href="cheat-sheet.html">Cheat sheet (printable)</a>
+    </nav>
+  </div>
+</header>
+
+<main id="content">
+<h1>Code Prompts</h1>
+<p>Prompts that actually help you write code with local AI models. Copy and paste
+these into Ollama, replacing the bracketed parts with your own code or task.</p>
+
+<div class="callout">
+<p><strong>How to prompt for code:</strong> ask for one thing at a time (one
+function, one script, one fix), say what language you want, paste error messages
+exactly as they appear, and tell the model your experience level.</p>
+</div>
+
+<h2>Prompt library</h2>
+
+<h3>Explain code</h3>
+<pre><code>Explain this code line by line in simple terms:
+
+&lt;PASTE YOUR CODE HERE&gt;</code></pre>
+
+<h3>Write a function</h3>
+<pre><code>Write a Python function that &lt;DESCRIBE WHAT IT DOES&gt;.
+Include comments and a short example of how to call it.</code></pre>
+
+<h3>Write tests</h3>
+<pre><code>Write unit tests for this Python function using the built-in unittest module:
+
+&lt;PASTE YOUR FUNCTION HERE&gt;</code></pre>
+
+<h3>Find bugs</h3>
+<pre><code>Look for bugs or problems in this code and suggest fixes:
+
+&lt;PASTE YOUR CODE HERE&gt;</code></pre>
+
+<h3>Add comments</h3>
+<pre><code>Add clear comments to this code so a beginner can understand it:
+
+&lt;PASTE YOUR CODE HERE&gt;</code></pre>
+
+<h3>Refactor (make cleaner)</h3>
+<pre><code>Make this code simpler and easier to read. Explain each change:
+
+&lt;PASTE YOUR CODE HERE&gt;</code></pre>
+
+<h3>Turn plain English into code</h3>
+<pre><code>Write a Python script that &lt;PLAIN ENGLISH DESCRIPTION&gt;.
+Show me how to save and run it.</code></pre>
+
+<h2>Example: from prompt to running code</h2>
+<ol>
+  <li>Prompt Ollama: <em>Write a Python program that asks for your name and
+  prints a greeting. Show me how to save and run it.</em></li>
+  <li>Copy the code into a file named <code>greet.py</code>.</li>
+  <li>Run it:</li>
+</ol>
+<pre><code class="language-bash">python greet.py</code></pre>
+<p>If it errors, copy the error and your code into the debugging prompt
+(<a href="debugging.html">see debugging help</a>).</p>
+
+<h2>Prompt tips</h2>
+<table>
+  <thead>
+    <tr><th>Do this</th><th>Not this</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>&ldquo;Write a Python function that&hellip;&rdquo;</td><td>&ldquo;Write code&hellip;&rdquo;</td></tr>
+    <tr><td>Paste the full error message</td><td>&ldquo;It does not work&rdquo;</td></tr>
+    <tr><td>Ask for one function at a time</td><td>&ldquo;Build me a whole app&rdquo;</td></tr>
+    <tr><td>Say your language and level</td><td>Assume the model knows your setup</td></tr>
+  </tbody>
+</table>
+
+<p class="no-print"><a href="index.html">&larr; Back to manual</a> |
+Source: <a href="../docs/code-prompts.md">docs/code-prompts.md</a></p>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Asdale Dynamics, LLC. MIT License.</p>
+    <p>Educational guide only — not medical, legal, or security advice.</p>
+  </div>
+</footer>
+</div>
+</body>
+</html>

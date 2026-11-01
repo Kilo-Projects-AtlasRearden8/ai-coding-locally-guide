@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ollama Setup — Free AI Coding with Local Models</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a href="#content" class="skip-link">Skip to content</a>
+
+<div class="site">
+<header>
+  <div class="container">
+    <a href="index.html" class="site-title">Asdale Dynamics, LLC</a>
+    <p class="tagline">Free AI coding with local models — no account, no API key, private by default</p>
+    <nav>
+      <a href="index.html">Manual</a>
+      <a href="ollama-setup.html" aria-current="page">Ollama setup</a>
+      <a href="code-prompts.html">Code prompts</a>
+      <a href="debugging.html">Debugging help</a>
+      <a href="privacy.html">Privacy-safe habits</a>
+      <a href="cheat-sheet.html">Cheat sheet (printable)</a>
+    </nav>
+  </div>
+</header>
+
+<main id="content">
+<h1>Ollama Setup</h1>
+<p>Install and run Ollama so you can code with free local AI models. No account,
+no API key, nothing leaves your machine.</p>
+
+<div class="callout">
+<p><strong>What is Ollama?</strong> A free, open-source tool that lets you
+download and run AI models on your own computer. Ollama is the player; the AI
+model is the recording. Install once, then pull whichever models you want.</p>
+</div>
+
+<h2>Step 1: Install Ollama</h2>
+<ol>
+  <li>Go to <a href="https://ollama.com">https://ollama.com</a> in your browser.</li>
+  <li>Download Ollama for your computer (Windows, Mac, or Linux).</li>
+  <li>Run the installer and follow the prompts. Accept the defaults.</li>
+</ol>
+
+<h2>Step 2: Verify the installation</h2>
+<p>Open a terminal (Command Prompt or PowerShell on Windows, Terminal on Mac or
+Linux) and type:</p>
+<pre><code class="language-bash">ollama --version</code></pre>
+<p>You should see a version number, for example:</p>
+<pre><code>ollama version is 0.6.x</code></pre>
+<p>If you see &ldquo;command not found,&rdquo; close and reopen your terminal and
+try again. On Linux, you may need to log out and back in.</p>
+
+<h2>Step 3: Confirm Ollama is running</h2>
+<pre><code class="language-bash">ollama list</code></pre>
+<p>An empty list is normal &mdash; you have not downloaded any models yet. No
+error message means Ollama is working.</p>
+
+<h2>Step 4: Pull a coding model</h2>
+<p>Choose a model and download it. Recommended for beginners:</p>
+<table>
+  <thead>
+    <tr><th>Model</th><th>Size</th><th>Good for</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>qwen2.5-coder:3b</code></td><td>~2 GB</td><td>Learning, fast answers, older computers</td></tr>
+    <tr><td><code>deepseek-coder:6.7b</code></td><td>~4 GB</td><td>Stronger coding help</td></tr>
+    <tr><td><code>codellama:7b</code></td><td>~4 GB</td><td>All-around coding assistant</td></tr>
+  </tbody>
+</table>
+<pre><code class="language-bash">ollama pull qwen2.5-coder:3b</code></pre>
+<p>Wait for the download to finish. You only need to do this once per model.</p>
+
+<h2>Step 5: Chat with your model</h2>
+<pre><code class="language-bash">ollama run qwen2.5-coder:3b</code></pre>
+<p>Type a question and press Enter:</p>
+<pre><code>&gt;&gt;&gt; Write a Python function that adds two numbers</code></pre>
+<p>Type <code>/bye</code> to exit, or press Ctrl+D.</p>
+
+<h2>Quick command reference</h2>
+<table>
+  <thead>
+    <tr><th>Command</th><th>What it does</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>ollama --version</code></td><td>Shows the installed Ollama version</td></tr>
+    <tr><td><code>ollama list</code></td><td>Lists models on your machine</td></tr>
+    <tr><td><code>ollama pull &lt;model&gt;</code></td><td>Downloads a model</td></tr>
+    <tr><td><code>ollama run &lt;model&gt;</code></td><td>Starts a chat session</td></tr>
+    <tr><td><code>/bye</code></td><td>Exits a chat session</td></tr>
+    <tr><td><code>ollama stop &lt;model&gt;</code></td><td>Stops a running model</td></tr>
+    <tr><td><code>ollama rm &lt;model&gt;</code></td><td>Deletes a model to free disk space</td></tr>
+  </tbody>
+</table>
+
+<div class="callout warn">
+<p><strong>Troubleshooting:</strong> slow download? Check your internet &mdash;
+you only need it to download the model. Model runs slowly? Try the smaller
+<code>qwen2.5-coder:3b</code> model. Connection refused? Restart your computer
+and run <code>ollama list</code> again.</p>
+</div>
+
+<p class="no-print"><a href="index.html">&larr; Back to manual</a> |
+Source: <a href="../docs/ollama-setup.md">docs/ollama-setup.md</a></p>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Asdale Dynamics, LLC. MIT License.</p>
+    <p>Educational guide only — not medical, legal, or security advice.</p>
+  </div>
+</footer>
+</div>
+</body>
+</html>

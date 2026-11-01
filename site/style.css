@@ -1,0 +1,173 @@
+/* Asdale Dynamics, LLC — Free AI Coding with Local Models site styles */
+:root {
+  --ink: #1a1a1a;
+  --muted: #555555;
+  --brand: #2f6f4f;
+  --brand-hover: #1e5136;
+  --bg: #ffffff;
+  --line: #dddddd;
+  --code-bg: #f6f8fa;
+  --code-border: #d8dee5;
+  --nav-bg: #f2f4f2;
+  --focus: #2f6f4f;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+a { color: var(--brand); text-decoration: underline; }
+a:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.site {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--line);
+  padding: 1rem 1.5rem;
+}
+
+header .container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--brand);
+  text-decoration: none;
+}
+
+.site-title:hover { color: var(--brand-hover); text-decoration: underline; }
+
+.tagline {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+nav {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+nav a { color: var(--ink); text-decoration: none; border-bottom: 2px solid transparent; padding-bottom: 0.25rem; }
+nav a:hover, nav a:focus { border-bottom-color: var(--brand); text-decoration: none; }
+nav a[aria-current="page"] { color: var(--brand); font-weight: 600; border-bottom-color: var(--brand); }
+
+main {
+  flex: 1;
+  padding: 2rem 1.5rem;
+  max-width: 720px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+h1 { font-size: 1.75rem; margin-top: 0; border-bottom: 2px solid var(--line); padding-bottom: 0.5rem; }
+h2 { font-size: 1.3rem; margin-top: 1.75rem; color: var(--brand); }
+h3 { font-size: 1.1rem; margin-top: 1.5rem; }
+p { margin: 0 0 1rem; }
+
+ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+li { margin-bottom: 0.35rem; }
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: 4px;
+  padding: 0.15em 0.4em;
+}
+
+pre {
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+pre code { background: transparent; border: none; padding: 0; font-size: inherit; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+th, td { border: 1px solid var(--line); padding: 0.5rem 0.75rem; text-align: left; }
+th { background: var(--code-bg); font-weight: 600; }
+
+.callout {
+  border-left: 4px solid var(--brand);
+  background: #f0f7f2;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  border-radius: 0 6px 6px 0;
+}
+.callout.warn { border-left-color: #b3541e; background: #faf4ec; }
+.callout.kbd { border-left-color: var(--brand); }
+
+kbd {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.85em;
+  background: #e7e9e7;
+  border: 1px solid #c4c9c4;
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+  margin: 0 0.1em;
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  background: var(--nav-bg);
+  padding: 1.25rem 1.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+footer .container { max-width: 900px; margin: 0 auto; }
+footer p { margin: 0.25rem 0; }
+
+@media print {
+  body { background: white; color: black; }
+  header, nav, footer, .no-print { display: none !important; }
+  main { padding: 0; width: 100%; max-width: 100%; }
+  h1 { border-bottom: 1px solid #000; padding-bottom: 0.4rem; font-size: 1.5rem; page-break-after: avoid; }
+  h2, h3 { page-break-after: avoid; color: black; }
+  code, pre { background: white !important; border: 1px solid #777; color: black; }
+  pre { page-break-inside: avoid; }
+  .callout { border: 1px solid #777; background: none; padding: 0.5rem; page-break-inside: avoid; }
+  a { text-decoration: none; color: black; }
+  table th { background: #eee; }
+  @page { margin: 1.5cm; }
+}

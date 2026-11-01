@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Printable Cheat Sheet — Free AI Coding with Local Models</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  @media print {
+    body { background: white; color: black; }
+    header, nav, footer, .no-print, .screen-only { display: none !important; }
+    main { padding: 0; width: 100%; max-width: 100%; }
+    h1 { border-bottom: 1px solid #000; padding-bottom: 0.4rem; font-size: 1.5rem; page-break-after: avoid; }
+    h2, h3 { page-break-after: avoid; color: black; }
+    code, pre { background: white !important; border: 1px solid #777; color: black; }
+    pre { page-break-inside: avoid; }
+    .callout { border: 1px solid #777; background: none; padding: 0.5rem; page-break-inside: avoid; }
+    a { text-decoration: none; color: black; }
+    table th { background: #eee; }
+    .print-hint { display: block; margin-top: 1rem; font-size: 0.85rem; color: #333; }
+    @page { margin: 1.5cm; }
+  }
+</style>
+</head>
+<body>
+<a href="#content" class="skip-link">Skip to content</a>
+
+<div class="site">
+<header>
+  <div class="container">
+    <a href="index.html" class="site-title">Asdale Dynamics, LLC</a>
+    <p class="tagline">Free AI coding with local models — no account, no API key, private by default</p>
+    <nav>
+      <a href="index.html">Manual</a>
+      <a href="ollama-setup.html">Ollama setup</a>
+      <a href="code-prompts.html">Code prompts</a>
+      <a href="debugging.html">Debugging help</a>
+      <a href="privacy.html">Privacy-safe habits</a>
+      <a href="cheat-sheet.html" aria-current="page">Cheat sheet (printable)</a>
+    </nav>
+  </div>
+</header>
+
+<main id="content">
+<h1>Printable Cheat Sheet</h1>
+<p class="print-hint screen-only">Press Ctrl+P (or Cmd+P) to print this page. Printed view hides navigation and shows only the cheat sheet.</p>
+
+<h2>Ollama commands</h2>
+<pre><code>ollama --version        Check Ollama is installed
+ollama list             List models on your machine
+ollama pull &lt;model&gt;     Download a model
+ollama run &lt;model&gt;      Start chatting with a model
+/bye                    Exit a chat session
+ollama stop &lt;model&gt;     Stop a running model
+ollama rm &lt;model&gt;       Delete a model to free space</code></pre>
+<p>Good starter model: <code>ollama pull qwen2.5-coder:3b</code></p>
+
+<h2>Code prompts (fill in the brackets)</h2>
+<pre><code>Explain code:
+
+Explain this code line by line:
+
+&lt;PASTE CODE&gt;
+
+Write a function:
+
+Write a Python function that &lt;DOES WHAT&gt;.
+Include an example of how to call it.
+
+Write tests:
+
+Write unittest tests for this function:
+
+&lt;PASTE FUNCTION&gt;
+
+Find bugs:
+
+Look for bugs and suggest fixes:
+
+&lt;PASTE CODE&gt;
+
+Add comments:
+
+Add beginner-friendly comments:
+
+&lt;PASTE CODE&gt;
+
+Plain English to code:
+
+Write a Python script that &lt;PLAIN ENGLISH GOAL&gt;.
+Show how to save and run it.</code></pre>
+
+<h2>Debugging template</h2>
+<pre><code>This code should &lt;GOAL&gt;, but it &lt;ACTUAL BEHAVIOR&gt;.
+
+Error:
+
+&lt;PASTE ERROR MESSAGE&gt;
+
+Code:
+
+&lt;PASTE CODE&gt;
+
+Suggest a fix and explain what went wrong.</code></pre>
+<p class="screen-only">If the fix fails, paste the new error and updated code back into Ollama and ask again.</p>
+
+<h2>Privacy rules</h2>
+<ul class="screen-only">
+  <li>No passwords in prompts</li>
+  <li>No API keys (&ldquo;sk-&hellip;&rdquo;, &ldquo;ghp_&hellip;&rdquo;) in prompts</li>
+  <li>No real customer/patient names or data</li>
+  <li>Use fake example data</li>
+  <li>Read AI code before running it</li>
+  <li>Keep secrets in <code>.env</code>, never in GitHub</li>
+</ul>
+<pre class="print-only" style="display:none;">[ ] No passwords in prompts
+[ ] No API keys in prompts
+[ ] No real customer/patient names or data
+[ ] Use fake example data
+[ ] Read AI code before running it
+[ ] Keep secrets in .env, never in GitHub</pre>
+
+<h2>Files in this guide</h2>
+<ul class="screen-only">
+  <li><a href="../docs/manual.md">docs/manual.md</a> — full manual</li>
+  <li><a href="../docs/ollama-setup.md">docs/ollama-setup.md</a> — install Ollama</li>
+  <li><a href="../docs/code-prompts.md">docs/code-prompts.md</a> — prompt library</li>
+  <li><a href="../docs/debugging.md">docs/debugging.md</a> — debugging help</li>
+  <li><a href="../docs/privacy.md">docs/privacy.md</a> — privacy-safe habits</li>
+  <li>site/cheat-sheet.html — this printable page</li>
+</ul>
+
+<p>&mdash;</p>
+<p>Created and maintained by <strong>Asdale Dynamics, LLC</strong> (Indiana).
+Dylan Asdale is the founder and author of <em>The Massive AI Manual</em>. Hub
+site: https://dylanasdale.github.io</p>
+<p>License: MIT. Copyright (c) 2026 Asdale Dynamics, LLC. See LICENSE.</p>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Asdale Dynamics, LLC. MIT License.</p>
+    <p>Educational guide only — not medical, legal, or security advice.</p>
+  </div>
+</footer>
+</div>
+</body>
+</html>

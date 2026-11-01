@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy-Safe Habits — Free AI Coding with Local Models</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a href="#content" class="skip-link">Skip to content</a>
+
+<div class="site">
+<header>
+  <div class="container">
+    <a href="index.html" class="site-title">Asdale Dynamics, LLC</a>
+    <p class="tagline">Free AI coding with local models — no account, no API key, private by default</p>
+    <nav>
+      <a href="index.html">Manual</a>
+      <a href="ollama-setup.html">Ollama setup</a>
+      <a href="code-prompts.html">Code prompts</a>
+      <a href="debugging.html">Debugging help</a>
+      <a href="privacy.html" aria-current="page">Privacy-safe habits</a>
+      <a href="cheat-sheet.html">Cheat sheet (printable)</a>
+    </nav>
+  </div>
+</header>
+
+<main id="content">
+<h1>Privacy-Safe Habits</h1>
+<p>How to use local AI coding tools while keeping your code, secrets, and data
+on your own machine.</p>
+
+<div class="callout">
+<p><strong>Local-first means private by default.</strong> When you run models
+through Ollama on your own computer, your prompts and code stay on your
+computer. No company reads them. No internet is needed after you download the
+model. Ollama requires no account and no API key.</p>
+</div>
+
+<h2>Daily privacy checklist</h2>
+<p>Before you paste anything into any AI tool, ask:</p>
+<ul>
+  <li>Does this contain a password?</li>
+  <li>Does this contain an API key or secret token?</li>
+  <li>Does this contain a real customer, patient, or employee name?</li>
+  <li>Does this contain an address, phone number, or ID number?</li>
+  <li>Am I using fake example data instead?</li>
+</ul>
+<p>If the answer to any of the first four is &ldquo;yes,&rdquo; do not paste it.
+Replace real data with fake data first.</p>
+
+<h2>Do and do not</h2>
+<table>
+  <thead>
+    <tr><th>Do</th><th>Do not</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Run models locally with Ollama</td><td>Paste API keys (&ldquo;sk-&hellip;&rdquo;, &ldquo;ghp_&hellip;&rdquo;) into prompts</td></tr>
+    <tr><td>Use fake names (&ldquo;Dylan&rdquo;, &ldquo;123 Fake Street&rdquo;, 555-0100)</td><td>Paste real patient or customer information</td></tr>
+    <tr><td>Keep secrets in environment variables or a <code>.env</code> file</td><td>Paste secrets into code you might commit</td></tr>
+    <tr><td>Read AI-written code before running it</td><td>Run code from AI without checking it</td></tr>
+    <tr><td>Keep Ollama and models updated</td><td>Share AI output that contains secrets online</td></tr>
+  </tbody>
+</table>
+
+<h2>Where real secrets belong</h2>
+<p>If your project genuinely needs a secret (for example, a database password):</p>
+<ol>
+  <li>Store it in an environment variable or a <code>.env</code> file.</li>
+  <li>Never paste it into an AI prompt.</li>
+  <li>Add <code>.env</code> to your <code>.gitignore</code> so it is never committed.</li>
+  <li>Never upload <code>.env</code> or files with real keys to GitHub.</li>
+</ol>
+<pre><code>.env
+*.key
+*.pem
+secrets/</code></pre>
+
+<div class="callout warn">
+<p><strong>About this guide:</strong> it is educational. It is not medical,
+legal, or security advice. If you handle regulated data (healthcare, finance,
+etc.), consult your organization&rsquo;s compliance rules before using AI tools
+with that data.</p>
+</div>
+
+<p class="no-print"><a href="index.html">&larr; Back to manual</a> |
+Source: <a href="../docs/privacy.md">docs/privacy.md</a></p>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Asdale Dynamics, LLC. MIT License.</p>
+    <p>Educational guide only — not medical, legal, or security advice.</p>
+  </div>
+</footer>
+</div>
+</body>
+</html>
