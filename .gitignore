@@ -1,0 +1,13 @@
+# Files and folders to keep out of version control
+
+.env
+*.key
+*.pem
+secrets/
+
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+.DS_Store
+Thumbs.db

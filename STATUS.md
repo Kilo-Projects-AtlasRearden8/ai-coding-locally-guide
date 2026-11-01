@@ -27,7 +27,8 @@ No account, no API key, nothing leaves your machine.
 - `style.css` — shared styles, skip link, semantic markup, print styles
 
 **Other:**
-- `README.md` — overview, credits Asdale Dynamics, LLC
+- `README.md` — overview, credits Asdale Dynamics, LLC, quick start, verification steps
+- `.gitignore` — keeps `.env`, keys, cache, and OS files out of version control
 - `LICENSE` — MIT License, Copyright (c) 2026 Asdale Dynamics, LLC
 - `verify/verify.py` — verification script (files, license, credit, HTML,
   print styles, secrets, links)
@@ -56,7 +57,7 @@ python3 verify/verify.py
 `python3 verify/verify.py` -> VERIFICATION PASSED
 
 Checks performed:
-- All 17 expected files present
+- All 18 expected files present (includes `.gitignore`)
 - `LICENSE` contains the exact line `Copyright (c) 2026 Asdale Dynamics, LLC`
 - `README.md` credits Asdale Dynamics, LLC and includes the copyright line
 - All 6 HTML pages parse as well-formed HTML (no unclosed or mismatched tags)

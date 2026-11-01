@@ -27,6 +27,27 @@ use this guide.
 A static HTML version of everything lives in `site/`, including a
 print-friendly cheat sheet at `site/cheat-sheet.html`.
 
+## Quick start
+
+1. Read `docs/manual.md` from the top, or open `site/index.html` in your browser.
+2. Install Ollama using `docs/ollama-setup.md` (no account, no API key).
+3. Try one prompt at a time from `docs/code-prompts.md`.
+4. If code breaks, use `docs/debugging.md` to get unstuck.
+5. Print `site/cheat-sheet.html` (press Ctrl+P / Cmd+P) and keep it on your desk.
+
+All pages are static — no build step, no server, no internet needed after you
+download your model.
+
+## How to verify
+
+```
+python3 verify/verify.py
+```
+
+It checks that all files exist, the license and credits are correct, the HTML
+pages are well-formed, internal links work, and no secrets or API keys are
+stored in the repository.
+
 ## Credits
 
 Created and maintained by **Asdale Dynamics, LLC** (Indiana), beginner-friendly
